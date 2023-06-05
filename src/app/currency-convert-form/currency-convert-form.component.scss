@@ -1,0 +1,118 @@
+@import "../../styles/base/vars";
+
+:host {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 45px;
+  height: 100%;
+}
+
+mat-tab-group {
+  width: 100%;
+  align-items: flex-start;
+  height: calc(100% - 45px);
+}
+
+mat-tab {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 45px;
+  width: 100%;
+
+  &-elements {
+    width: 100%;
+
+    p {
+      margin-bottom: 12px;
+      font-family: 'Roboto', serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      color: #252F2C;
+    }
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  &__control input {
+    width: 65% !important;
+  }
+
+  &__sum-actions {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    cursor: pointer;
+
+    &.increase {
+      background-color: $dark-green;
+      right: -25px;
+    }
+
+    &.decrease {
+      background-color: $main-red;
+    }
+  }
+}
+
+.additional-setting {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+
+  div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.control-wrapper {
+  position: relative;
+  width: 20%;
+}
+
+.apr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  background: $main-green;
+  font-family: 'Roboto', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  width: 58px;
+  height: 20px;
+  border-radius: 4px;
+  text-align: center;
+  vert-align: middle;
+}

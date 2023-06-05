@@ -1,0 +1,78 @@
+@use "../../styles/base/vars";
+
+:host {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  padding: 30px 50px;
+  background: vars.$main-green;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.currency-display {
+  height:100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  color: #FFFFFF;
+  font-family: 'Roboto', serif;
+
+  &__field {
+    &.label {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    &.content {
+      font-weight: 700;
+      font-size: 55px;
+      line-height: 64px;
+    }
+
+    &.content-small {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+
+    }
+
+    &.f-w-small {
+      font-weight: 300;
+    }
+
+    &.rating {
+      display: flex;
+      gap: 8px;
+    }
+
+    &.rating-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      width: 100%;
+
+      button {
+        height: 48px;
+        background: transparent;
+        padding: 13px;
+        border: 2px solid #FFFFFF;
+        border-radius: 7px;
+        width: 100% ;
+        color: #FFFFFF;
+        cursor: pointer;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

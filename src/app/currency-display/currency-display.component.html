@@ -1,0 +1,35 @@
+<div class="currency-display">
+  <div class="currency-display__field profit">
+    <p class="currency-display__field label">Profit</p>
+    <p class="currency-display__field content">
+      {{depositInfo.value ? ((depositInfo | async)?.profit | currency:'CAD':'symbol-narrow':'2.3-3'): '$00.000' }}
+    </p>
+  </div>
+  <div class="currency-display__field percentage">
+    <p class="currency-display__field label">Percent</p>
+    <p class="currency-display__field content">
+      {{depositInfo.value ? (depositInfo | async)?.percent + '%' : '0%' }}
+    </p>
+    <p class="currency-display__field content-small">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+  </div>
+  <div class="currency-display__field rating-wrapper">
+    <p class="currency-display__field rating">
+      <img src="assets/icons/star.svg" alt="star">
+      <img src="assets/icons/star.svg" alt="star">
+      <img src="assets/icons/star.svg" alt="star">
+      <img src="assets/icons/star.svg" alt="star">
+      <img src="assets/icons/star.svg" alt="star">
+    </p>
+    <button>Lorem ipsum dolor sit</button>
+  </div>
+  <div class="currency-display__field desc">
+    <p class="currency-display__field content-small f-w-small">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Minus cumque animi mollitia ipsam quae fuga voluptatibus aut
+      quia autem nulla corrupti suscipit quam, rem veniam, reiciendis,
+      temporibus magni quis velit! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Minus cumque animi mollitia ipsam quae fuga voluptatibus aut quia autem nulla corrupti suscipit quam,
+      rem veniam, reiciendis, temporibus magni quis velit! Lorem ipsum dolor sit amet consectetur adipisicing
+    </p>
+  </div>
+</div>

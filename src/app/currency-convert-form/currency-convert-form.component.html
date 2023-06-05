@@ -1,0 +1,68 @@
+<mat-tab-group fitInkBarToContent>
+  <mat-tab label="Lorem1">
+    <form class="form" [formGroup]="currencyConvertForm">
+      <div class="form-elements">
+        <p>Amount?</p>
+        <mat-form-field class="form__control">
+          <div class="control-wrapper">
+            <input
+              formControlName="amount"
+              matInput
+              placeholder="0"
+              [min]="1000"
+              [max]="1000000"
+              type="number">
+            <p class="form__sum-actions decrease" (click)="amountHandler(false)">-</p>
+            <p class="form__sum-actions increase" (click)="amountHandler()">+</p>
+          </div>
+        </mat-form-field>
+        <mat-error *ngIf="
+        currencyConvertForm.get('amount')?.hasError('min') ||
+         currencyConvertForm.get('amount')?.hasError('max')">
+          Please enter a value between 1000 and 1000000
+        </mat-error>
+      </div>
+      <div class="form-elements">
+        <p>Currency?</p>
+        <mat-form-field class="form__control">
+          <input type="text"
+                 matInput
+                 formControlName="currency"
+                 [matAutocomplete]="currency">
+          <mat-autocomplete class="custom-scroll" #currency="matAutocomplete">
+            <mat-option
+              *ngFor="let option of (filteredOptions | async)"
+              [value]="option.shortCurrencyName + ' ' + '('+option.fullCurrencyName+')'">
+              {{option.shortCurrencyName}} ({{option.fullCurrencyName}})
+              <span class="apr">{{'APR '+option.percentageInYear+'%'}}</span>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+      <div class="form-elements">
+        <p>Period?</p>
+        <mat-form-field class="form__control">
+          <input
+            type="number"
+            matInput
+            formControlName="period"
+            matAutocompletePosition="above"
+            [matAutocomplete]="depositPeriod">
+          <mat-autocomplete
+            class="custom-scroll" #depositPeriod="matAutocomplete">
+            <mat-option *ngFor="let option of depositList" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+      <div class="additional-setting">
+        <div><span>Lorem ipsum </span><img src="assets/icons/info-grey.svg" alt=""></div>
+        <mat-slide-toggle></mat-slide-toggle>
+        <div><span>Lorem ipsum </span><img src="assets/icons/info-grey.svg" alt=""></div>
+      </div>
+    </form>
+  </mat-tab>
+  <mat-tab label="Lorem2">Content 2</mat-tab>
+  <mat-tab label="Lorem3">Content 3</mat-tab>
+</mat-tab-group>
